@@ -1,17 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { RouterProvider, createBrowserRouter} from 'react-router-dom';
+
+import './App.css';
+import Maintenance from './screens/Maintenance.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const router = createBrowserRouter([
+    {
+      path:'/',
+      element:<Maintenance/>,
+    }
+  ]);
 
   return (
-    <>
-      <h1>This website is under construction</h1>
-      <p>For more info please contact us at : <a>contact@miroux.co</a></p>
-    </>
-  )
+    <RouterProvider router={router}/>
+  );
+
 }
 
 export default App
